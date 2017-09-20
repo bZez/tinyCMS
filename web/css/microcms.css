@@ -1,0 +1,245 @@
+/*Global*/
+a:hover {
+    text-decoration: none;
+}
+body { 
+    overflow: hidden;
+    padding: 0 0 50px 0; 
+    background:url('../images/pattern.jpg');
+    margin:0;
+    width: 100%
+}
+section { min-height: 100vh;display:block;}
+#contact { min-height: 100vh;display:block;background: url('../images/patternbw.jpg'); margin-top: -20px;}
+button:focus {outline:0;}
+
+label.requi#C30044:after {
+    content: " *";
+    color: #c12e2a;
+}
+textarea {resize: none}
+/*Fonts*/
+.navbar-brand, .contact-section h2, #splashTxt p, #artitle, #comtitle, #admtitle, #socialtxt, #logtitle{
+    font-family: 'Molle', cursive;
+}
+
+/*Up & Down*/
+#pager {
+    z-index: 99999999;
+    position: fixed;
+    left:50%;
+    top:100%;
+    margin-left: -34px;
+    margin-top:-58px;
+    opacity: .95;
+}
+#pager button {
+    width: 30px;
+    height: 30px;
+    border-radius:15px 15px 0 0;
+      color: #fff;
+  background-color: #333;
+  border:10px;
+}
+
+/*Barre de menu*/
+.navbar {
+    min-height:28px !important;
+    opacity: 0.9;
+}
+.navbar-nav > li > a, .navbar-brand {
+    padding-top:4px !important; 
+    padding-bottom:0 !important;
+    height: 28px;
+}
+.dropdown-menu {
+    background-color: black !important;
+    opacity: .9;
+}
+.dropdown-menu a {
+    background-color: black !important;
+}
+
+/*Splash screen*/
+
+#splash {
+    text-align: center;
+    background-color: black;
+    background:url('../images/dotwhite.png'), url('../images/design-header.jpg');
+}
+#splashTxt p:first-child {
+    margin:-70px 0 0 -465px;
+    font-size: 20px;
+}
+#splashTxt p {
+    font-size: 100px;
+    width: 30em;
+    height: 10em;   
+    text-align: center;
+    margin: -1em 0 0 -15em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-bottom: 500px;
+}
+#splashTxt i, .navbar-brand i {color:#C30044;}
+#splashTxt p:last-child {
+    font-size: 20px;
+    margin:-3px 0 0 -140px;
+}
+
+/*Sections*/
+#msgarea {height: 180px;}
+#contenu {
+    padding: 0;
+    margin:0;
+    width: 100vw;
+    height: 100vh;
+}
+.white {
+    background: white;
+}
+
+/*Articles*/
+#viewArt, #coms, #viewCont, #viewSocial, #viewLogin, #admin {
+    border-radius: 10px;
+    box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.2);
+}
+#artitle, #comtitle, #contitle, #socialtxt, #logtitle {
+    position: relative;
+}
+#viewArt {
+    padding:20px;
+    box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.1) inset;
+    margin-top: -50px;
+}
+#artitle {
+    z-index: -1;
+    text-align: left;
+    top: -10px;
+    left:10px;
+    font-size: 75px;
+}
+
+
+/*Commentaires*/
+
+#coms {
+    text-align: left;
+    padding:20px;
+    background-color: #C30044;
+    box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.1) inset;
+    color: white;
+    font-size: 20px;
+}
+
+#comtitle {
+    text-align: right;
+    z-index: -1;
+    font-size: 100px;
+    top:50px;
+    left:-10px;
+    color: #C30044;
+}
+
+/*Contact & Social*/
+
+#viewCont {
+    z-index: 2;
+    padding:20px;
+    margin-top: -50px;
+    background-color: white;
+    margin-bottom: 50px;
+}
+#contitle {
+    z-index: 1;
+    text-align: left;
+    top: -10px;
+    left:10px;
+    font-size: 75px;
+    color: white;
+}
+
+#viewSocial {
+    z-index: 2;
+    padding:20px;
+    background-color: white;
+    box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.1) inset;
+    color: white;
+    font-size: 20px;
+    margin-top: -60px;
+}
+#socialtxt {
+    text-align: left;
+    z-index: 1;
+    font-size: 50px;
+    top:-30px;
+    left:10px;
+    color: white;
+}
+
+/*Login*/
+
+#viewLogin {
+    z-index: 2;
+    padding:20px;
+    margin-top: -50px;
+    background-color: lightblue;
+    margin-bottom: 50px;
+}
+#logtitle {
+    z-index: -1;
+    text-align: left;
+    top: -5px;
+    left:10px;
+    font-size: 100px;
+    color: lightblue;
+}
+
+/*Admin*/
+
+#admtitle {
+        text-align: left;
+    z-index: 1;
+    font-size: 100px;
+    top:50px;
+    left:-10px;
+    color: #C30044;
+}
+#admin {
+    z-index: 3;
+    text-align: left;
+    padding:20px;
+    background-color: #C30044;
+    box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.1) inset;
+    color: white;
+    font-size: 20px;
+    margin-top: -50px;
+}
+/*Footer*/
+
+.footer {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    text-align: center;
+    background: #123456 !important;
+}
+.adminTable {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#adminAction form{
+    display: inline;
+}
+
+#adminAction {
+    float: right;
+
+}
+
+
+#errorPanel {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}

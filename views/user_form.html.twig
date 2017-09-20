@@ -1,0 +1,46 @@
+{% extends 'layout.html.twig' %}
+{% form_theme userForm 'bootstrap_3_horizontal_layout.html.twig' %}
+{% set adminMenu = true %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">{{ block('title') }}</h2>
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {% if form_errors(userForm.password.first) %}
+        <div class="alert alert-danger">
+            {{ form_errors(userForm.password.first) }}
+        </div>
+    {% endif %}
+
+    <div class="well">
+        {{ form_start(userForm) }}
+
+        {{ form_row(userForm.username)}}
+        {{ form_widget(userForm.username)}}
+
+        {{ form_row(userForm.password.first)}} 
+        {{ form_widget(userForm.password.first)}}
+
+        {{ form_row(userForm.password.second)}}
+        {{ form_widget(userForm.password.second)}}
+
+        {{ form_row(userForm.role)}}
+        {{ form_widget(userForm.role)}}
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-3">
+                <input type="submit" class="btn btn-primary" value="Save" />
+            </div>
+        </div>
+
+        {{ form_end(userForm) }}
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+{% form_theme articleForm 'bootstrap_3_horizontal_layout.html.twig' %}
+{% set adminMenu = true %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">{{ block('title') }}</h2>
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <div class="well">
+        {{ form_start(articleForm) }}
+        
+        {{ form_row(articleForm.title)}}                   
+        {{ form_widget(articleForm.title)}}
+
+        {{ form_row(articleForm.content) }}
+        {{ form_widget(articleForm.content) }}
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-3">
+                <input type="submit" class="btn btn-primary" value="Poster" />
+            </div>
+        </div>
+        {{ form_end(articleForm) }}
+    </div>
+    </div>
+{% endblock %}

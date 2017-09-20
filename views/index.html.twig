@@ -1,0 +1,58 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Home{% endblock %}
+{% block splash %}
+<section id="splash">
+<div id="splashTxt">
+<p>welcome to</p><br/>
+<p>my<i>tiny</i>cms</p><br/>
+<p>made with <i>❤</i> by bzez</p>
+</div>
+</section>
+{% endblock %}
+{% block content %}
+<section>
+{% for article in articles[:4] %}
+<article class="col-md-3">
+    <h2><a class="articleTitle" href="{{ path('article', { 'id': article.id }) }}">{{ article.title }}</a></h2>
+    <p>{{ article.content[:500] ~ ' ...'}}</p>
+</article>
+{% endfor %}
+</section>
+{% endblock %}
+{% block contact %}
+        <div class="contact-section">
+            <div class="container">
+              <h2 id="contitle">Contactez moi</h2>
+             <div id="viewCont">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <label for="mailername">Nom</label>
+                      <input type="text" class="form-control" id="mailername" placeholder="Votre petit nom :)">
+                    </div>
+                    <div class="form-group">
+                      <label for="mailermail">Email</label>
+                      <input type="email" class="form-control" id="mailermail" placeholder="votre@email.com">
+                    </div>
+                    <div class="form-group ">
+                      <label for="mailermsg">Message</label>
+                     <textarea id="msgarea" class="form-control" placeholder="Votre message..."></textarea> 
+                    </div>
+                    <button type="submit" class="btn btn-default">Envoyer !</button>
+                  </form>
+</div></div></div>
+                    <h3 id="socialtxt">Socials</h3>
+                    <div id="viewSocial">
+                  <ul class="list-inline banner-social-buttons">
+                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter"> <span class="network-name"><object class="logo" data="https://image.flaticon.com/icons/svg/23/23931.svg" width="40" height="40"  type="image/svg+xml"></object></span></i></a></li>
+                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-facebook"> <span class="network-name"><object class="logo" data="https://image.flaticon.com/icons/svg/23/23957.svg" width="40" height="40"  type="image/svg+xml"></object></span></i></a></li>
+                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-youtube-play"> <span class="network-name"><object class="logo" data="https://image.flaticon.com/icons/svg/61/61109.svg" width="40" height="40"  type="image/svg+xml"></object></span></i></a></li>
+                  </ul>
+                  </div>
+
+              </div>
+        </div>
+{% endblock %}
+

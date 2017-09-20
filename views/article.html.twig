@@ -1,0 +1,62 @@
+{% extends "layout.html.twig" %}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    {% form_theme commentForm 'bootstrap_3_horizontal_layout.html.twig' %}
+{% endif %}
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 id="artitle">{{ article.title[:30] }}</h2>
+    <div id="viewArt" class="white">
+    <p>{{ article.content }}</p>
+    {% if is_granted('ROLE_ADMIN') %}
+    <div id="adminAction">
+    <form action="{{ path('admin_article_edit', { 'id': article.id }) }}">
+    <input type="submit" class="btn btn-primary" value="Editer" />
+    </form>
+    <form action="{{ path('admin_article_delete', { 'id': article.id }) }}">
+    <input type="submit" class="btn btn-danger" value="Supprimer" />
+    </form>
+    </div>
+    </div><br/>
+    {% endif %}
+        <h3 id="comtitle">Commentaires</h3>
+    <div id="coms">
+    {% for comment in comments %}
+        <strong>{{ comment.author.username }}</strong> à dit : {{ comment.content }}<br>
+    {% else %}
+        ✘ Il n'y à encore aucun commentaire ! <br/>
+        Sois le premier à donner ton avis !
+    {% endfor %}
+     <h3>Réagir à cet article.</h3>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+   
+        {{ form_start(commentForm) }}
+
+        {{ form_row(commentForm.email) }}
+        {{ form_widget(commentForm.email) }}
+
+        {{ form_row(commentForm.website) }}
+        {{ form_widget(commentForm.website) }}
+
+        {{ form_row(commentForm.content) }}
+        {{ form_widget(commentForm.content) }}
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-3">
+                <input type="submit" class="btn btn-primary" value="Poster !" />
+            </div>
+        </div>
+        {{ form_end(commentForm) }}
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="alert alert-success">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+    {% else %}
+        <a href="{{ path('login') }}">Connectez-vous</a> pour ajouter un commentaire !
+    {% endif %}
+    </div>
+   
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'layout.html.twig' %}
+{% form_theme commentForm 'bootstrap_3_horizontal_layout.html.twig' %}
+{% set adminMenu = true %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+<h2 class="text-center">{{ block('title') }}</h2>
+{% for flashMessage in app.session.flashbag.get('success') %}
+<div class="alert alert-success">
+    {{ flashMessage }}
+</div>
+{% endfor %}
+
+<div class="well">
+{{ form_start(commentForm) }}
+ 
+        {{ form_row(commentForm.email) }}
+        {{ form_widget(commentForm.email) }}
+ 
+        {{ form_row(commentForm.website) }}
+        {{ form_widget(commentForm.website) }}
+            
+        {{ form_row(commentForm.content) }}
+        {{ form_widget(commentForm.content) }}
+         
+    <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-3">
+            <input type="submit" class="btn btn-primary" value="Poster !" />
+        </div>
+    </div>
+{{ form_end(commentForm) }}
+</div>
+</div>
+{% endblock %}

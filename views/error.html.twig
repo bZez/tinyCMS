@@ -1,0 +1,16 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Aïe, aïe, aïe{% endblock %}
+
+{% block content %}
+<div class="container">
+<div class="row" id="errorPanel">
+    <div class="col-xs-5">
+        <img class="img-responsive pull-right" src="{{ asset('/images/404-ghost.png') }}" alt="Bouh !"/>
+    </div>
+    <div class="col-xs-6">
+        <h1>Whoops...<br><small>{{ message }}</small></h1>
+    </div>
+</div>
+</div>
+{% endblock %}
