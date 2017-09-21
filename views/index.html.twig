@@ -12,10 +12,10 @@
 {% endblock %}
 {% block content %}
 <section>
-{% for article in articles[:5] %}
+{% for article in articles[:8] %}
 <article class="col-md-3">
     <h2><a class="articleTitle" href="{{ path('article', { 'id': article.id }) }}">{{ article.title }}</a></h2>
-    <p>{{ article.content[:400] ~ ' ...'}}</p>
+    <p>{{ article.content[:500] ~ ' ...'}}</p>
 </article>
 {% endfor %}
 </section>
