@@ -6,14 +6,14 @@
 
 {% block content %}
 <div class="container">
-<h2 class="text-center">{{ block('title') }}</h2>
+<h2 id="edititle" class="text-center">{{ block('title') }}</h2>
 {% for flashMessage in app.session.flashbag.get('success') %}
 <div class="alert alert-success">
     {{ flashMessage }}
 </div>
 {% endfor %}
 
-<div class="well">
+<div class="well edititle">
 {{ form_start(commentForm) }}
  
         {{ form_row(commentForm.email) }}

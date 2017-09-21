@@ -91,7 +91,7 @@ class UserDAO extends DAO implements UserProviderInterface
         if ($row)
             return $this->buildDomainObject($row);
         else
-            throw new UsernameNotFoundException(sprintf('User "%s" not found.', $username));
+            throw new UsernameNotFoundException(sprintf('Utilisateur "%s" introuvable.', $username));
     }
 
     /**
@@ -101,7 +101,7 @@ class UserDAO extends DAO implements UserProviderInterface
     {
         $class = get_class($user);
         if (!$this->supportsClass($class)) {
-            throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', $class));
+            throw new UnsupportedUserException(sprintf('Les instances de "%s" ne sont pas supportées.', $class));
         }
         return $this->loadUserByUsername($user->getUsername());
     }

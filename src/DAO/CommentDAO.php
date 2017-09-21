@@ -84,7 +84,7 @@ class CommentDAO extends DAO
         if ($row) {
             return $this->buildDomainObject($row);
         } else {
-            throw new \Exception("No comment matching id " . $id);
+            throw new \Exception("Aucun commentaire correspondant " . $id);
         }
     }
 

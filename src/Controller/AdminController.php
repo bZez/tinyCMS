@@ -62,7 +62,7 @@ class AdminController {
             $app['session']->getFlashBag()->add('success','L\'article à été correctement mis à jour.');
         }
         return $app['twig']->render('article_form.html.twig', array(
-            'title' => 'Edition d\'un article' ,
+            'title' => 'Article' ,
             'articleForm' => $articleForm->createView()));
     }
 
@@ -98,7 +98,7 @@ class AdminController {
             $app['session']->getFlashBag()->add('success', 'Le commentaire à été correctement mis à jour !');
         }
         return $app['twig']->render('comment_form.html.twig', array(
-            'title' => 'Edition d\'un commentaire',
+            'title' => 'Commentaire',
             'commentForm' => $commentForm->createView()));
     }
 
@@ -139,7 +139,7 @@ class AdminController {
             $app['session']->getFlashBag()->add('success', 'Utilisateur crée avec succès !');
         }
         return $app['twig']->render('user_form.html.twig', array(
-            'title' => 'Nouvel utilisateur',
+            'title' => 'Nouvel user',
             'userForm' => $userForm->createView()));
     }
 
@@ -162,10 +162,10 @@ class AdminController {
             $password = $encoder->encodePassword($plainPassword, $user->getSalt());
             $user->setPassword($password); 
             $app['dao.user']->save($user);
-            $app['session']->getFlashBag()->add('success', 'The user was successfully updated.');
+            $app['session']->getFlashBag()->add('success', 'Utilisateur modifié avec succès !.');
         }
         return $app['twig']->render('user_form.html.twig', array(
-            'title' => 'Edit user',
+            'title' => 'User',
             'userForm' => $userForm->createView()));
     }
 
@@ -180,7 +180,7 @@ class AdminController {
         $app['dao.comment']->deleteAllByUser($id);
         // Delete the user
         $app['dao.user']->delete($id);
-        $app['session']->getFlashBag()->add('success', 'The user was successfully removed.');
+        $app['session']->getFlashBag()->add('success', 'Utilisateur supprimé !.');
         // Redirection page admin
         return $app->redirect($app['url_generator']->generate('admin'));
     }

@@ -12,10 +12,10 @@
 {% endblock %}
 {% block content %}
 <section>
-{% for article in articles[:4] %}
+{% for article in articles[:5] %}
 <article class="col-md-3">
     <h2><a class="articleTitle" href="{{ path('article', { 'id': article.id }) }}">{{ article.title }}</a></h2>
-    <p>{{ article.content[:500] ~ ' ...'}}</p>
+    <p>{{ article.content[:400] ~ ' ...'}}</p>
 </article>
 {% endfor %}
 </section>
@@ -46,9 +46,9 @@
                     <h3 id="socialtxt">Socials</h3>
                     <div id="viewSocial">
                   <ul class="list-inline banner-social-buttons">
-                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter"> <span class="network-name"><object class="logo" data="https://image.flaticon.com/icons/svg/23/23931.svg" width="40" height="40"  type="image/svg+xml"></object></span></i></a></li>
-                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-facebook"> <span class="network-name"><object class="logo" data="https://image.flaticon.com/icons/svg/23/23957.svg" width="40" height="40"  type="image/svg+xml"></object></span></i></a></li>
-                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-youtube-play"> <span class="network-name"><object class="logo" data="https://image.flaticon.com/icons/svg/61/61109.svg" width="40" height="40"  type="image/svg+xml"></object></span></i></a></li>
+                    <li><a href="https://twitter.com/graphicnaivety" class="btn btn-default btn-lg"><i class="fa fa-twitter"> <span class="network-name"><object class="logo" data="https://image.flaticon.com/icons/svg/23/23931.svg" width="40" height="40"  type="image/svg+xml"></object></span></i></a></li>
+                    <li><a href="https://github.com/bZez" class="btn btn-default btn-lg"><i class="fa fa-facebook"> <span class="network-name"><object class="logo" data="https://image.flaticon.com/icons/svg/23/23957.svg" width="40" height="40"  type="image/svg+xml"></object></span></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/sambzez" class="btn btn-default btn-lg"><i class="fa fa-youtube-play"> <span class="network-name"><object class="logo" data="https://image.flaticon.com/icons/svg/61/61109.svg" width="40" height="40"  type="image/svg+xml"></object></span></i></a></li>
                   </ul>
                   </div>
 

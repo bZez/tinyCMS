@@ -16,25 +16,25 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
                 ->add('username', TextType::class, array(
-                    'label'       => "User name",
+                    'label'       => "Nom",
                     'required'    => true,
                     'constraints' => new Assert\NotBlank(),
                 ))
                 ->add('password', RepeatedType::class, array(
                     'type'            => PasswordType::class,
                     'constraints'     => new Assert\Length(['min' => 5]),
-                    'invalid_message' => 'The password fields must match.',
+                    'invalid_message' => 'Les mots de passes ne sont pas identique !',
                     'options'         => array(
                         'required' => true
                     ),
                     'first_options'   => array(
-                        'label'       => 'Password',
+                        'label'       => 'Mot de passe',
                         'required'    => true,
-                        'attr'        => ['placeholder' => 'Minimum 6 characters'],
+                        'attr'        => ['placeholder' => 'Minimum 6 caractères'],
                     ),
                     'second_options'  => array(
-                        'label'       => 'Repeat password',
-                        'attr'        => ['placeholder' => 'The same password'],
+                        'label'       => 'Verification',
+                        'attr'        => ['placeholder' => 'Répetez le mot de passe'],
                         'required'    => true,
                     ),
                 ))
