@@ -32,5 +32,5 @@ L'application tinyCMS est publiée sous la licence [MIT](http://choosealicense.c
 
 ## Remerciements
 
-*[Baptiste PESQUET](https://github.com/bpesquet/): pour le tutorial OpenClassroom. ;
-*[OC](http://openclassroom.com/) pour tout :)
+* [Baptiste PESQUET](https://github.com/bpesquet/): pour le tutorial OpenClassroom. ;
+* [OC](http://openclassroom.com/) pour tout :)
