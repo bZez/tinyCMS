@@ -29,3 +29,8 @@ Voici les principales caractéristiques de l'architecture :
 ## Contributions
 
 L'application tinyCMS est publiée sous la licence [MIT](http://choosealicense.com/licenses/mit/). Les contributions à son amélioration via les *issues* ou les *pull requests* sont les bienvenues !
+
+## Remerciements
+
+[Baptiste PESQUET](https://github.com/bpesquet/): pour le tutorial OpenClassroom.
+[Openclassroom](http://openclassroom.com/)
